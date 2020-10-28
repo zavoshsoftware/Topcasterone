@@ -1,0 +1,246 @@
+﻿@model  ViewModels.ContactViewModel
+
+@{
+    ViewBag.Title = "contact kgt oil";
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+} 
+ <!--Start breadcrumb area-->
+<section class="breadcrumb-area" style="background-image: url(img/breadcrumb/breadcrumb-bg.jpg);">
+    <div class="container text-center">
+        <h1>تماس با ما</h1>
+    </div>
+</section>
+<!--End breadcrumb area-->
+<!--Start breadcrumb bottom area-->
+<section class="breadcrumb-bottom-area">
+    <div class="container">
+        <div class="left pull-left">
+            <a href="/contact">تماس با ما</a>
+        </div>
+        <div class="right pull-right">
+            <ul>
+                <li><a href="/">صفحه اصلی</a></li>
+                <li><i class="fa fa-angle-left" aria-hidden="true"></i></li>
+                <li>تماس با ما</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--End breadcrumb bottom area-->
+<!--Start Contact area-->
+<section class="contact-area contact-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-sm-12 col-xs-12">
+                <div class="send-message-form">
+                    <div class="title">
+                        <h2 class="text-right">با ما در تماس باشید</h2>
+                        <span class="border"></span>
+                    </div>
+                    @*<h3>I would like to discuss:</h3>*@
+                    <div class="contact-form text-right">
+                        <div class="row">
+                          
+                            <div class="col-md-6">
+                                <input type="text" name="mail" placeholder="ایمیل *" class="font-IRANSans">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="name" placeholder="نام و نام خانوادگی *" class="font-IRANSans">
+                            </div>
+                        </div>
+                       
+                        <div class="row">
+                            <div class="col-md-12">
+                                <textarea name="message" placeholder="پیغام" class="font-IRANSans"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button class="thm-btn yellow-bg" type="submit">ارسال</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <div class="col-md-4 col-sm-7 col-xs-12">
+                <div class="contact-details">
+                    <h2 class="text-right">اطلاعات تماس</h2>
+                    <div class="contact-info-carousel owl-theme owl-carousel">
+                        <div class="item">
+                            <div class="contact-details-title">
+                                <h5 class="text-right">با ما در تماس باشید</h5>
+                            </div>
+                            <ul class="contact-info">
+                                <li>
+                                    <div class="icon-box">
+                                        <span class="flaticon-signs"></span>
+                                    </div>
+                                    <div class="text-box">
+                                        <p><span>آدرس:</span> کیلومتر 18 جاده مخصوص کرج<br>خیابان گلزار، پلاک 9</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon-box">
+                                        <span class="flaticon-email-envelope-back-symbol-on-phone-screen"></span>
+                                    </div>
+                                    <div class="text-box">
+                                        <p><span>اطلاعات تماس:</span> +(98) 21 88880000 info@topcasterone.com</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon-box">
+                                        <span class="flaticon-technology"></span>
+                                    </div>
+                                    <div class="text-box">
+                                        <p><span>فکس:</span> +(98) 21 88880000</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon-box">
+                                        <span class="flaticon-clock-1"></span>
+                                    </div>
+                                    <div class="text-box">
+                                        <p>
+                                        <p><span>شنبه تا چهارشنبه:</span> 8 تا 18</p>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="item">
+                            <div class="contact-details-title">
+                                <h5 class="text-right">با ما در تماس باشید</h5>
+                            </div>
+                            <ul class="contact-info">
+                                <li>
+                                    <div class="icon-box">
+                                        <span class="flaticon-signs"></span>
+                                    </div>
+                                    <div class="text-box">
+                                        <p><span>آدرس:</span> کیلومتر 18 جاده مخصوص کرج<br>خیابان گلزار، پلاک 9</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon-box">
+                                        <span class="flaticon-email-envelope-back-symbol-on-phone-screen"></span>
+                                    </div>
+                                    <div class="text-box">
+                                        <p><span>اطلاعات تماس:</span> +(98) 21 88880000 info@topcasterone.com</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon-box">
+                                        <span class="flaticon-technology"></span>
+                                    </div>
+                                    <div class="text-box">
+                                        <p><span>فکس:</span> +(98) 21 88880000</p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="icon-box">
+                                        <span class="flaticon-clock-1"></span>
+                                    </div>
+                                    <div class="text-box">
+                                        <p>
+                                        <p><span>شنبه تا جهارشنبه:</span> 8 تا 18</p>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="contact-social-links">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            @*<div class="col-md-8 col-sm-12 col-xs-12">
+                <div class="send-message-form">
+                    <div class="title">
+                        <h2>Send Messge Us</h2>
+                        <span class="border"></span>
+                    </div>
+                    <h3>I would like to discuss:</h3>
+                    <div class="contact-form">
+                        <div class="alert alert-danger" id="errorDivQ"> an error occurred.</div>
+                        <div class="alert alert-success" id="SuccessDivQ">Tanks. your message submited successfully</div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" id="name" name="name" placeholder="Your Name *">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" id="country" name="country" placeholder="Your country *">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" id="mail" name="mail" placeholder="Your Mail *">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" id="phonumber" name="phonumber" placeholder="Phone Num">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <textarea name="message" id="message" placeholder="Write Your Needs..."></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button class="thm-btn yellow-bg" type="button" id="submit">Your Message</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+        </div>
+    </div>
+</section> 
+
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#submit").click(function () {
+                var nameVal = $('#name').val();
+                var emailVal = $('#mail').val();
+                var messageVal = $('#message').val();
+                var phonumberVal = $('#phonumber').val();
+                var countryVal = $('#country').val();
+
+                if (nameVal !== "" && messageVal !== "" && emailVal !== "" && phonumberVal !== "" && countryVal !== "") {
+                    $.ajax(
+                        {
+                            url: "/ContactUsForms/SubmitContactForm",
+                            data: { Name: nameVal, Email: emailVal, Message: messageVal, phonenumber: phonumberVal, country:countryVal },
+                            type: "GET"
+                        }).done(function (result) {
+                        if (result == 'true') {
+                            $('#errorDivQ').css('display', 'none');
+                            $('#SuccessDivQ').css('display', 'block');
+                        }
+                        else
+                        {
+                            $('#errorDivQ').css('display', 'block');
+                            $('#SuccessDivQ').css('display', 'none');
+                            $('#errorDivQ').html('Invalid email.');
+                        }
+                    });
+                }
+                else {
+                    $('#errorDivQ').css('display', 'block');
+                    $('#SuccessDivQ').css('display', 'none');
+                    $('#errorDivQ').html('insert all field completly.');
+
+                }
+            });
+        });
+    </script>
+}

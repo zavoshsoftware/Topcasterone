@@ -1,0 +1,445 @@
+﻿@model  ViewModels.HomeViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+<section class="rev_slider_wrapper">
+    <div id="slider1" class="rev_slider" data-version="5.0">
+        <ul>
+            @foreach (var slide in Model.Sliders)
+            {
+                <li data-transition="slidingoverlayleft">
+                    <img src="@slide.ImageUrl" alt="" width="1920" height="580" data-bgposition="top center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="1">
+
+                    <div class="tp-caption tp-resizeme"
+                         data-x="right" data-hoffset="0"
+                         data-y="center" data-voffset="-4"
+                         data-transform_idle="o:1;"
+                         data-transform_in="x:[-175%];y:0px;z:0;rX:0;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0.01;s:3000;e:Power3.easeOut;"
+                         data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+                         data-mask_in="x:[100%];y:0;s:inherit;e:inherit;"
+                         data-splitin="none"
+                         data-splitout="none"
+                         data-start="500">
+                        <div class="slide-content-box">
+                            <h3>TopCasterOne</h3>
+                            <h1>@slide.Title</h1>
+                            @*<p>@slide.Summary</p>*@
+                            <div class="button">
+                                <a class="thm-btn yellow-bg" href="@slide.LinkAddress">@slide.LinkTitle</a>
+                                <a class="thm-btn our-solution" href="@slide.LinkAddress2">@slide.LinkTitle2</a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            }
+          
+        </ul>
+    </div>
+</section>
+<!--End rev slider wrapper-->
+<!--Start services area-->
+<section class="services-area">
+    <div class="container">
+        <div class="sec-title">
+            <p>چه کاری برای شما انجام می دهیم</p>
+            <h1>خدمات ما</h1>
+        </div>
+        <div class="row">
+            <!--Start single service item-->
+            @foreach (var text in Model.UnderSliderText)
+            {
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="single-service-item">
+                        <div class="img-holder">
+                            <img src="@text.ImageUrl" alt="Awesome Image">
+                            <div class="overlay">
+                                <div class="box">
+                                    <div class="content">
+                                        <a class="thm-btn yellow-bg" href="#">اطلاعات بیشتر</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-holder">
+                            <div class="icon">
+                                <span class="flaticon-science"></span>
+                            </div>
+                            <div class="text">
+                                <h3>@text.Title</h3>
+                                <p>@text.Body</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+    </div>
+</section>
+<!--End services area-->
+<!--Start about us area-->
+<section class="about-us-area">
+    <div class="outer-box clearfix">
+        <div class="image-column" style="background-image:url(/img/about/bg-image.jpg);">
+            <ul class="icon-box" role="tablist">
+                <li class="single-item active" data-tab-name="about">
+                    <a href="#about" aria-controls="about" role="tab" data-toggle="tab" class="clearfix">
+                        <div class="icon">
+                            <span class="flaticon-sign"></span>
+                        </div>
+                        <div class="content">
+                            <h2>درباره ما</h2>
+                            <p>اطلاعات شرکت</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="single-item" data-tab-name="history">
+                    <a href="#history" aria-controls="history" role="tab" data-toggle="tab" class="clearfix">
+                        <div class="icon">
+                            <span class="flaticon-sign"></span>
+                        </div>
+                        <div class="content">
+                            <h2>تاریخچه ما</h2>
+                            <p>بررسی رزومه</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="single-item" data-tab-name="process">
+                    <a href="#process" aria-controls="process" role="tab" data-toggle="tab" class="clearfix">
+                        <div class="icon">
+                            <span class="flaticon-sign"></span>
+                        </div>
+                        <div class="content">
+                            <h2>فرآیند</h2>
+                            <p>فرآیند انجام کار</p>
+                        </div>
+                    </a>
+                </li>
+                <li class="single-item" data-tab-name="histwo">
+                    <a href="#histwo" aria-controls="histwo" role="tab" data-toggle="tab" class="clearfix">
+                        <div class="icon">
+                            <span class="flaticon-sign"></span>
+                        </div>
+                        <div class="content">
+                            <h2>مزایای ما</h2>
+                            <p>مزایای همکاری با ما</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="content-column tab-content">
+            <!--Start single tab content-->
+            <div class="inner-box tab-pane fade in active" id="about">
+                <div class="sec-title">
+                    <p>Company Overview</p>
+                    <h1>@Model.About.Title</h1>
+                </div>
+                <div class="text-box">
+                    <p>@Html.Raw(Model.About.Body)</p>
+                </div>
+                <div class="fact-counter">
+                    <ul>
+                        <li class="single-fact-counter">
+                            <div class="icon-holder"><span class="flaticon-avatar"></span></div>
+                            <span class="timer" data-from="1" data-to="2456" data-speed="5000" data-refresh-interval="50">2456</span>
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                            <h3>نیروی کار</h3>
+                        </li>
+                        <li class="single-fact-counter">
+                            <div class="icon-holder"><span class="flaticon-buildings"></span></div>
+                            <span class="timer" data-from="1" data-to="640" data-speed="5000" data-refresh-interval="50">640</span>
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                            <h3>مشتری فعال</h3>
+                        </li>
+                        <li class="single-fact-counter">
+                            <div class="icon-holder"><span class="flaticon-technology"></span></div>
+                            <span class="timer" data-from="1" data-to="3250" data-speed="5000" data-refresh-interval="50">3250</span>
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                            <h3>پروژه انجام شده</h3>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--End single tab content-->
+            <!--Start single tab content-->
+            <div class="inner-box tab-pane fade active" id="history">
+                <div class="sec-title">
+                    <p>به وب سایت topcasterone خوش آمدید</p>
+                    <h1>تاریخچه</h1>
+                </div>
+							<div class="timeline_wrapper">
+								<ul class="bxslider">
+									<li>
+										<div class="single-item">
+											<div class="year">
+												<h5>1390</h5>
+											</div>
+											<div class="img-text-holder">
+										 
+												<div class="text-holder">
+													<h3>تاسیس شرکت</h3>
+													<p>شرکت در تاریخ 17 آذر سال 1390 تاسیس گردید.</p>
+												</div>
+											</div>
+										</div>
+										<div class="single-item">
+											<div class="year">
+												<h5>1391</h5>
+											</div>
+											<div class="img-text-holder">
+									 
+												<div class="text-holder">
+													<h3>شرکت نفت پاسارگاد</h3>
+													<p>قرارداد تامین قطعات ریخته گری</p>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="single-item">
+											<div class="year">
+												<h5>1392</h5>
+											</div>
+											<div class="img-text-holder">
+											 
+												<div class="text-holder">
+													<h3>وزارت راه</h3>
+													<p>قرارداد تامین تجهیزات راه سازی</p>
+												</div>
+											</div>
+										</div>
+										<div class="single-item">
+											<div class="year">
+												<h5>1393</h5>
+											</div>
+											<div class="img-text-holder">
+											 
+												<div class="text-holder">
+													<h3>سازمان هواپیمایی کشور</h3>
+													<p>تامین قطعات هواپیما</p>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+
+            </div>
+            <!--End single tab content-->
+            <!--Start single tab content-->
+            <div class="inner-box tab-pane fade active" id="process">
+                <div class="sec-title">
+                    <p>فرآیند ثبت سفارش</p>
+                    <h1>@Model.Proccess.Title</h1>
+                </div>
+                <div class="text-box">
+                    <p>@Html.Raw(Model.Proccess.Body)</p>
+                </div>
+                <ul class="processing-system">
+                    <li>
+                        <div class="single-item">
+                            <div class="iocn-holder">
+                                <p>1</p>
+                                <span class="flaticon-tool"></span>
+                            </div>
+                            <h3>درخواست کالا</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="single-item">
+                            <div class="iocn-holder">
+                                <p>2</p>
+                                <span class="flaticon-engineer"></span>
+                            </div>
+                            <h3>استعلام و ارائه پروفورم</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="single-item">
+                            <div class="iocn-holder">
+                                <p>3</p>
+                                <span class="flaticon-avatar"></span>
+                            </div>
+                            <h3>تاید پروفورم و تحویل</h3>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!--End single tab content-->
+            <!--Start single tab content-->
+            <div class="inner-box tab-pane fade active" id="histwo">
+                <div class="sec-title">
+                    <p>TopcasterOne</p>
+                    <h1>مزایای همکاری با ما</h1>
+                </div>
+                <div class="accordion-box">
+                    @foreach (var item in Model.TechText)
+                    {
+                        <div class="accordion accordion-block">
+                            <div class="accord-btn"><h4>@item.Title</h4></div>
+                            <div class="accord-content">
+                                <p>@Html.Raw(item.Body)</p>
+                            </div>
+                        </div>
+                    }
+
+
+                </div>
+            </div>
+            <!--End single tab content-->
+        </div>
+    </div>
+</section>
+<!--End about us area-->
+@*<!--Start our team area-->
+<section class="cart-area">
+    <div class="container">
+        <div class="sec-title center text-center">
+            <p>Today Price</p>
+            <h1>Counter offer</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-outer">
+                    <table class="cart-table">
+                        <thead class="cart-header clearfix">
+                            <tr>
+                                <th class="prod-column">Products</th>
+                                <th>&nbsp;</th>
+                                <th class="price">Quantity</th>
+                                <th>Package</th>
+                                <th>Delivery</th>
+                                <th>Price</th>
+                                <th>Payment</th>
+                                <th>Validity</th>
+                                <th>Order</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var product in Model.Products)
+                            {
+
+                                <tr>
+                                    <td colspan="2" class="prod-column">
+                                        <div class="column-box">
+                                            <h3 class="prod-title">@product.Title</h3>
+                                        </div>
+                                    </td>
+                                    <td class="price">@product.Quantity </td>
+                                    <td class="sub-total">@product.Package </td>
+                                    <td>@product.Delivery    </td>
+
+                                    <td> @product.Price    </td>
+                                    <td>@product.Payment </td>
+                                    <td> @product.Validity</td>
+
+                                    <td>
+                                        <a href="/Orders/Submit/@product.Id">order</a>
+                                    </td>
+                                </tr>
+
+                            }
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End our team area-->*@
+<!--Start latest project area-->
+<section class="latest-project-area" style="background-image:url(/img/project/bg.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="sec-title pull-right">
+                    <p>وبلاگ</p>
+                    <h1>آخرین آخبار و مقالات</h1>
+                </div>
+                <div class="button pull-left">
+                    <a class="thm-btn yellow-bg" href="/blog">آرشیو اخبار</a>
+                </div>
+            </div>
+        </div>
+	    <div class="row">
+		    
+				
+				@foreach (var blog in Model.LatestBlogs)
+				{
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<div class="single-latest-project">
+							<div class="img-holder">
+								<img src="@blog.ImageUrl" alt="@blog.Title">
+								<div class="overlay-box">
+									<div class="box">
+										<div class="content">
+											<a href="/blog/@blog.UrlParam"><i class="fa fa-link" aria-hidden="true"></i></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="title-holder text-center">
+								<h4><a href="/blog/@blog.UrlParam">@blog.Title</a></h4>
+								<p>@blog.CreationDateStr</p>
+							</div>
+						</div>
+					</div>
+
+				}
+	
+
+
+
+
+	    </div>
+    </div>
+</section>
+<!--End latest project area-->
+<!--Start testimonial area-->
+
+<section class="our-team-area">
+    <div class="container">
+        <div class="sec-title">
+            <p>آشنایی با افراد</p>
+            <h1>تیم ما</h1>
+        </div>
+        <div class="row">
+            @foreach (var member in Model.TeamMembers)
+            {
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="single-team-member">
+                    <div class="img-holder">
+                        <img src="@member.ImageUrl" alt="Awesome Image">
+                        <div class="overlay-box">
+                            <div class="box">
+                                <div class="content">
+                                    <ul class="member-social-links">
+                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-holder">
+                        <h5 class="hidden-sm hidden-xs">@member.Post</h5>
+                        <h3>@member.FullName</h3>
+                        <p>
+                            @Html.Raw(member.Summery)
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            }
+
+        </div>
+    </div>
+</section>
+<!--End testimonial area-->

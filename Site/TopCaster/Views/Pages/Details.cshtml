@@ -1,0 +1,117 @@
+﻿@model  ViewModels.PageDetailViewModel
+
+@{
+    ViewBag.Title = Model.Page.Title;
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+
+<!--Start breadcrumb area-->
+<section class="breadcrumb-area" style="background-image: url(/img/breadcrumb/breadcrumb-bg.jpg);">
+    <div class="container text-center">
+        <h1>@Model.Page.Title</h1>
+    </div>
+</section>
+<!--End breadcrumb area-->
+<!--Start breadcrumb bottom area-->
+<section class="breadcrumb-bottom-area">
+    <div class="container">
+        <div class="left pull-left">
+            <a href="news-single.html">Products</a>
+        </div>
+        <div class="right pull-right">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                <li>@Model.Page.Title</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!--End breadcrumb bottom area-->
+<!--Start Single news area-->
+<section id="news-area" class="single-news-area">
+    <div class="container">
+        <div class="row">
+            <!--Start blog post-->
+            <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
+                <div class="blog-post">
+                    <!--Start single blog post-->
+                    <div class="single-blog-post">
+                        <div class="img-holder">
+                            <img src="@Model.Page.ImageUrl" alt="@Model.Page.Title">
+                        </div>
+                        <div class="text-holder">
+                            <h2 class="blog-title">
+                                @Model.Page.Title
+                            </h2>
+                            <ul class="meta-info">
+                                <li><i class="fa fa-clock-o" aria-hidden="true"></i><a href="#">@Model.Page.CreationDate.ToShortDateString()</a></li>
+                                <li><i class="fa fa-tags" aria-hidden="true"></i><a href="#">@Model.Page.PageGroup.Title</a></li>
+                                <li><i class="fa fa-eye" aria-hidden="true"></i><a href="#">@Model.Page.Visit Views</a></li>
+                            </ul>
+                            <div class="text">
+                                @Html.Raw(Model.Page.Body)
+                            </div>
+                        </div>
+                    </div>
+                    <!--End single blog post-->
+            
+                 
+                </div>
+            </div>
+            <!--End blog post-->
+            <!--Start sidebar Wrapper-->
+            <div class="col-lg-3 col-md-4 col-sm-7 col-xs-12">
+                <div class="sidebar-wrapper">
+                
+                    <!--Start single sidebar-->
+                    <div class="single-sidebar">
+                        <div class="sidebar-title">
+                            <h1>Categories</h1>
+                            <span class="border"></span>
+                        </div>
+                        <ul class="categories clearfix">
+                            @foreach (var pageGroup in Model.PageGroups)
+                            {
+                                <li><a href="/pagegroup/@pageGroup.Id"><i class="fa fa-angle-right" aria-hidden="true"></i>@pageGroup.Title</a></li>
+                            }
+                        </ul>
+                    </div>
+                    <!--End single sidebar-->
+                    <!--Start single sidebar-->
+                    <div class="single-sidebar">
+                        <div class="sidebar-title">
+                            <h1>popular Product</h1>
+                            <span class="border"></span>
+                        </div>
+                        <ul class="popular-post">
+                     @foreach (var popularPage in Model.PopularPages)
+                     {
+                         <li>
+                             @*<div class="img-holder">
+                                 <img src="/img/sidebar/popular-post-1.jpg" alt="Awesome Image">
+                                 <div class="overlay-box">
+                                     <div class="box">
+                                         <div class="content">
+                                             <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                         </div>
+                                     </div>
+                                 </div>
+                             </div>*@
+                             <div class="title">
+                                 <h3><a href="#">@popularPage.Title</a></h3>
+                                 <p><i class="fa fa-clock-o" aria-hidden="true"></i>@popularPage.CreationDate.ToShortDateString()</p>
+                             </div>
+                         </li>
+                     }
+                        </ul>
+                    </div>
+                    <!--End single sidebar-->
+                    
+                </div>
+            </div>
+            <!--End Sidebar Wrapper-->
+        </div>
+    </div>
+</section>
+<!--End Single news area-->

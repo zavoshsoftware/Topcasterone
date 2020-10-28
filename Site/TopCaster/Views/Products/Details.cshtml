@@ -1,0 +1,198 @@
+﻿@model ViewModels.ProductDetailViewModel
+@{
+		ViewBag.Title = Model.Product.Title;
+		Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+
+
+<section class="breadcrumb-area" style="background-image: url(/img/breadcrumb/breadcrumb-bg.jpg);">
+	<div class="container text-center">
+		<h1>@Model.Product.Title</h1>
+	</div>
+</section>
+
+<section class="breadcrumb-bottom-area">
+	<div class="container">
+		<div class="left pull-left">
+			<a href="#">محصولات</a>
+		</div>
+		<div class="right pull-right">
+			<ul>
+				<li><a href="/">صفحه اصلی</a></li>
+				<li><i class="fa fa-angle-left" aria-hidden="true"></i></li>
+				<li><a href="/category/@Model.Product.ProductGroup.UrlParam">@Model.Product.ProductGroup.Title</a></li>
+				<li><i class="fa fa-angle-left" aria-hidden="true"></i></li>
+				<li>@Model.Product.Title</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+
+<section id="project-area" class="project-single-area">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-3">
+				<div class="single-project-info">
+					<ul>
+						@foreach (var feature in Model.ProductFeatures)
+						{
+								<li><span>@feature.Key :</span>@feature.Value</li>
+						}
+
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-9">
+				<div class="content">
+					<div class="sec-title-two">
+						<h2>@Model.Product.Title</h2>
+						<span class="border"></span>
+					</div>
+					<div class="row">
+
+						<div class="col-md-9">
+							<p>@Html.Raw(Model.Product.Body)</p>
+						</div>
+						<div class="col-md-3">
+							<img src="@Model.Product.ImageUrl" />
+						</div>
+					</div>
+
+					<ul class="single-project-social-link">
+						<li><a href="#"><i aria-hidden="true" class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i aria-hidden="true" class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+						<li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+						<li><a href="#"><i class="fa fa-skype" aria-hidden="true"></i></a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</section>
+
+<section class="project-single-area">
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="content">
+					<div class="sec-title-two">
+						<h2>محصولات مرتبط</h2>
+						<span class="border"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+			<div class="product-items">
+				<div class="row">
+					
+					@foreach (var product in Model.RelatedProducts)
+					{
+						<div class="col-md-3 col-sm-3 col-xs-12">
+							<div class="single-product-item">
+								<div class="img-holder">
+									<img src="@product.ImageUrl" alt="@product.Title">
+									<div class="overlay">
+										<div class="box">
+											<div class="content">
+												<a class="thm-btn yellow-bg" href="/product/@product.Code">
+													<i class="fa fa-eye" aria-hidden="true"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="title">
+									<h3>@product.Title</h3>
+									 
+									<a href="/product/@product.Code">مشاهده جزییات</a>
+								</div>
+							</div>
+						</div>
+					}
+				</div>
+				 
+			</div>
+		
+
+	</div>
+</section>
+
+<section class="single-product-reply">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content">
+                    <div class="comment-box">
+                        <div class="sec-title-two">
+                            <h2>یادداشت ها (@Model.ProductComments.Count())</h2>
+                            <span class="border"></span>
+                        </div>
+                        @foreach (var comment in Model.ProductComments)
+                        {
+                            <div class="single-comment-box">
+                                <div class="img-holder">
+                                    <img src="~/img/avatar.png" width="75" />
+                                </div>
+                                <div class="text-holder">
+                                    <div class="top">
+                                        <div>
+                                            <h5 class="comment-title">@comment.Name</h5>
+                                        </div>
+
+                                    </div>
+                                    <div class="text">
+                                        <p>@comment.Message</p>
+                                        @*<a class="reply" href="#">Reply</a>*@
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <div class="reply-box">
+                        <div class="sec-title-two">
+                            <h2>یادداشت شما</h2>
+                            <span class="border"></span>
+                        </div>
+                     
+                        <div class="reply-form">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <p class="alert alert-danger" id="comment-reject"></p>
+                                    <p class="alert alert-success" id="comment-succes">یادداشت شما با موفقیت ثبت شد</p>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input name="email" placeholder="ایمیل*" type="text" id="commentEmail">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input name="name" placeholder="نام و نام خانوادگی*" type="text" id="commentName">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <textarea name="need" placeholder="یادداشت..." id="commentBody"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <button class="thm-btn yellow-bg" type="submit" id="prodcutReplySubmit" onclick="SubmitComment();">ارسال</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

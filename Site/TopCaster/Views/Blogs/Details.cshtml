@@ -1,0 +1,185 @@
+﻿@model ViewModels.BlogDetailViewModel
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+
+<section class="breadcrumb-area" style="background-image: url(/img/breadcrumb/breadcrumb-bg.jpg);">
+    <div class="container text-center">
+        <h1>اخبار و مقالات</h1>
+    </div>
+</section>
+<!--End breadcrumb area-->
+<!--Start breadcrumb bottom area-->
+<section class="breadcrumb-bottom-area">
+    <div class="container">
+        <div class="left pull-left">
+            <a href="/Blogs">اخبار</a>
+        </div>
+        <div class="right pull-right">
+            <ul>
+                <li><a href="/">صفحه اصلی</a></li>
+                <li><i class="fa fa-angle-left" aria-hidden="true"></i></li>
+                <li>اخبار و مقالات</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section id="news-area news-padding">
+    <div class="container">
+        <div class="row">
+           
+            <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
+                <div class="blog-post">
+                    <!--Start single blog post-->
+                    <div class="single-blog-post">
+                        <div class="img-holder">
+                            <img src="@Model.Blog.ImageUrl" alt="Awesome Image">
+                        </div>
+                        <div class="text-holder">
+                            <h2 class="blog-title">
+                               @Model.Blog.Title
+                            </h2>
+                            <ul class="meta-info">
+                                <li><i class="fa fa-clock-o" aria-hidden="true"></i>@Model.Blog.CreationDate.ToShortDateString()</li>
+                                <li><i class="fa fa-eye" aria-hidden="true"></i>@Model.Blog.Visit</li>
+                                <li><i class="fa fa-comments" aria-hidden="true"></i>@Model.Blog.BlogComments.Count()</li>
+                            </ul>
+                            <div class="text">
+                                <p>@Html.Raw(Model.Blog.Body)</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+            
+            <div class="col-lg-3 col-md-4 col-sm-7 col-xs-12">
+                <div class="sidebar-wrapper">
+                    <div class="single-sidebar">
+                        <form class="search-form" action="#">
+                            <input placeholder="جستجو" type="text">
+                            <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </form>
+                    </div>
+                    <div class="single-sidebar">
+                        <div class="sidebar-title">
+                            <h1>جدیدترین اخبار</h1>
+                            <span class="border"></span>
+                        </div>
+                        <ul class="categories clearfix">
+                            @foreach (var blog in Model.RecentBlogs)
+                            {
+                                <li><a href="/blogs/details/@blog.Id">@blog.Title<span>(@blog.Visit)</span><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>
+                            }
+
+
+                        </ul>
+                    </div>
+                    <div class="single-sidebar">
+                        <div class="sidebar-title">
+                            <h1>پربازدیدترین اخبار</h1>
+                            <span class="border"></span>
+                        </div>
+                        <ul class="popular-post">
+                            @foreach (var blog in Model.PopularBlogs)
+                            {
+                                <li>
+                                    <div class="img-holder">
+                                        <img src="@blog.ImageUrl" alt="@blog.Title">
+                                        <div class="overlay-box">
+                                            <div class="box">
+                                                <div class="content">
+                                                    <a href="/blogs/details/@blog.Id"><i class="fa fa-link" aria-hidden="true"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="title">
+                                        <h3><a href="/blogs/details/@blog.Id">@blog.Title</a></h3>
+                                        <p><i class="fa fa-clock-o" aria-hidden="true"></i>@blog.CreationDate.ToShortDateString()</p>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>  
+<section class="single-product-reply">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content">
+                    <div class="comment-box">
+                        <div class="sec-title-two">
+                            <h2>یادداشت ها (@Model.Comments.Count())</h2>
+                            <span class="border"></span>
+                        </div>
+                      @foreach (var comment in Model.Comments)
+                      {
+                        <div class="single-comment-box">
+                            <div class="img-holder">
+                                <img src="~/img/avatar.png" width="75"/>
+                            </div>
+                            <div class="text-holder">
+                                <div class="top">
+                                    <div>
+                                        <h5 class="comment-title">@comment.Name</h5>
+                                    </div>
+                                   
+                                </div>
+                                <div class="text">
+                                    <p>@comment.Message</p>
+                                    @*<a class="reply" href="#">Reply</a>*@
+                                </div>
+                            </div>
+                        </div>
+                      }
+                    </div>
+                    <div class="reply-box">
+                        <div class="sec-title-two">
+                            <h2>یادداشت شما</h2>
+                            <span class="border"></span>
+                        </div>
+
+                        <div class="reply-form">
+                            <div class="row">
+                                <div class="col-md-12">
+                                   
+                                        <p class="alert alert-danger" id="comment-reject"></p>
+                                        <p class="alert alert-success" id="comment-succes">یادداشت شما با موفقیت ثبت شد</p>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input name="email" placeholder="ایمیل*" type="text" id="commentEmail">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input name="name" placeholder="نام و نام خانوادگی*" type="text" id="commentName">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <textarea name="need" placeholder="یادداشت..." id="commentBody"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <button class="thm-btn yellow-bg" type="submit" id="prodcutReplySubmit" onclick="SubmitCommentForBlog();">ارسال</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

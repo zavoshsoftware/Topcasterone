@@ -1,0 +1,422 @@
+﻿@font-face {
+    font-family: 'Iransans';
+    src: url(/fonts/IranSans/IRANSansWebFaNum.eot) format('embedded-opentype'), url(/fonts/IranSans/IRANSansWebFaNum.woff2) format('woff2'), url(/fonts/IranSans/IRANSansWebFaNum.woff) format('woff'), url(/fonts/IranSans/IRANSansWebFaNum.ttf) format('truetype');
+}
+
+body, p, a, h1, h2, h3, h4, h5, h6, ul, li, input, button, table, th, td, span {
+    font-family: IRANSans;
+}
+
+.rev_slider_wrapper .slide-content-box h1, .rev_slider_wrapper .slide-content-box p, .rev_slider_wrapper .slide-content-box .button a, .accordion-box .accordion .accord-btn h4, .about-us-area .content-column .inner-box .fact-counter ul li.single-fact-counter h3, .single-team-member .text-holder h5, .single-footer-widget .contact-address li .content-holder p span, .single-product-item .title a, .breadcrumb-bottom-area .left a {
+    font-family: IRANSans !important;
+}
+
+.header-area .top-info ul, .main-menu .navigation {
+    direction: rtl;
+}
+
+.top-info ul li.single-info-box {
+    padding-left: 0;
+    padding-right: 35px;
+}
+
+.top-info ul li, .top-info ul li .social-links ul li {
+    margin-left: 0;
+    margin-right: 40px;
+}
+
+    .top-info ul li.single-info-box .icon-holder {
+        right: 0;
+    }
+
+    .top-info ul li.single-info-box .text-holder p span {
+        font-family: IRANSans;
+    }
+
+
+    .top-info ul li .social-links ul li {
+        margin-left: 0;
+        margin-right: 12px;
+    }
+
+.main-menu .navigation li {
+    margin-left: -2px;
+    margin-right: 2px;
+}
+
+.main-menu .navigation > li > ul {
+    right: 0;
+}
+
+.services-area .single-service-item .text-holder {
+    padding-left: 0;
+    padding-right: 60px;
+}
+
+    .services-area .single-service-item .text-holder .icon {
+        left: auto;
+        right: 0;
+    }
+
+    .services-area .single-service-item .text-holder .text {
+        direction: rtl;
+        padding-left: 0;
+        padding-right: 20px;
+    }
+
+        .services-area .single-service-item .text-holder .text p {
+            text-align: justify;
+        }
+
+.sec-title:before {
+    right: 0;
+    left: auto;
+}
+
+.sec-title p, .sec-title h1 {
+    direction: rtl;
+}
+
+.single-service-item .img-holder img {
+    height: auto;
+}
+
+.about-us-area .content-column {
+    float: left;
+}
+
+.about-us-area .icon-box {
+    float: left;
+}
+
+.about-us-area .image-column {
+    float: right;
+    background-position: left top;
+}
+
+.about-us-area .icon-box .single-item {
+    direction: rtl;
+    padding-right: 65px;
+}
+
+    .about-us-area .icon-box .single-item h2, .about-us-area .icon-box .single-item p {
+        direction: rtl;
+        text-align: right;
+    }
+
+    .about-us-area .icon-box .single-item .icon {
+        right: 0;
+        left: auto;
+    }
+
+.about-us-area .content-column .inner-box .sec-title {
+    padding-left: 0;
+    padding-right: 24px;
+}
+
+.timeline_wrapper .single-item {
+    padding-left: 0;
+    padding-right: 130px;
+}
+
+    .timeline_wrapper .single-item .year {
+        left: auto;
+        right: 27px;
+    }
+
+    .timeline_wrapper .single-item:before {
+        left: auto;
+        right: -27px;
+    }
+
+    .timeline_wrapper .single-item .year:before {
+        left: auto;
+        right: -27px;
+    }
+
+.timeline_wrapper:before {
+    left: auto;
+    right: 4px;
+}
+
+.timeline_wrapper .bx-wrapper .bx-next {
+    left: auto;
+    right: 51px;
+}
+
+.bx-wrapper .bx-prev {
+    left: auto;
+    right: 10px;
+}
+
+.img-text-holder .text-holder {
+    text-align: right;
+}
+
+.text-box p, .accord-content p {
+    direction: rtl;
+    text-align: justify;
+}
+
+.accordion-box .accordion .accord-btn h4 {
+    text-align: right;
+}
+
+.accordion-box .accordion .accord-btn:after {
+    left: 20px;
+    right: auto;
+}
+
+.fact-counter ul {
+    direction: rtl;
+}
+
+.about-us-area .content-column .inner-box .fact-counter ul li.single-fact-counter {
+    margin-right: 0;
+    margin-left: 50px;
+}
+
+.latest-project-area .sec-title {
+    padding-left: 0;
+    padding-right: 24px;
+}
+
+.our-team-area .sec-title {
+    padding-left: 0;
+    padding-right: 24px;
+}
+
+.single-team-member {
+    padding-left: 0;
+    padding-right: 170px;
+}
+
+    .single-team-member .img-holder {
+        left: auto;
+        right: 0;
+    }
+
+    .single-team-member .text-holder {
+        padding-left: 0;
+        padding-right: 20px;
+        text-align: right;
+        direction: rtl;
+    }
+
+        .single-team-member .text-holder p {
+            text-align: justify;
+        }
+
+.latest-project-area .img-holder img {
+    height: auto;
+}
+
+.single-footer-widget .title h3, .single-footer-widget .contact-address li .content-holder p, .single-footer-widget .quick-links li {
+    text-align: right;
+    direction: rtl;
+}
+
+.single-footer-widget .title:before {
+    left: auto;
+    right: 0;
+}
+
+.single-footer-widget .contact-address li {
+    padding-left: 0;
+    padding-right: 40px;
+}
+
+    .single-footer-widget .contact-address li .icon-holder {
+        left: auto;
+        right: 0;
+    }
+
+.single-footer-widget .quick-links {
+    float: right;
+}
+
+    .single-footer-widget .quick-links.left {
+        margin-right: 0;
+        margin-left: 60px;
+    }
+
+.single-footer-widget {
+    direction: rtl;
+}
+
+.footer-social-links li {
+    margin-right: 0;
+    margin-left: 26px;
+}
+
+.single-product-item .title h3 {
+    text-align: center;
+}
+
+.sidebar-wrapper .single-sidebar .sidebar-title h1 {
+    text-align: right;
+    direction: rtl;
+}
+
+.sidebar-wrapper .single-sidebar .sidebar-title {
+    direction: rtl;
+    text-align: right;
+}
+
+    .sidebar-wrapper .single-sidebar .sidebar-title h1 {
+        direction: rtl;
+        text-align: right;
+    }
+
+.sidebar-wrapper .single-sidebar ul li {
+    direction: rtl;
+    text-align: right;
+}
+
+.single-sidebar .categories li a i {
+    padding-right: 0;
+    padding-left: 10px;
+}
+
+.breadcrumb-bottom-area ul {
+    direction: rtl;
+}
+
+.sec-title-two {
+    direction: rtl;
+}
+
+.project-single-area p {
+    direction: rtl;
+    text-align: justify;
+}
+.project-single-area .single-project-info ul li span {
+    font-family: IRANSans;
+    float: right;
+}
+
+.single-project-info li {
+    text-align: right;
+    direction: rtl;
+}
+.single-product-reply{
+    margin-bottom:50px;
+}
+.reply-box form.reply-form input[type="text"], .reply-box form.reply-form textarea {
+    text-align: right;
+    direction: rtl;
+    
+}
+.thm-btn {
+    font-family: IRANSans !important;
+    direction: rtl;
+}
+.single-blog-post .text-holder .blog-title
+{
+    text-align:right;
+    direction:rtl;
+}
+.single-blog-post .text-holder .meta-info {
+    text-align: right;
+    direction: rtl;
+}
+.single-blog-post .text-holder .text {
+    text-align: right;
+    direction: rtl;
+}
+.single-blog-post .text-holder .meta-info li i
+{
+    padding-right:0;
+    padding-left:5px;
+}
+.text p{
+    text-align:justify;
+}
+.single-sidebar .popular-post li .title p i
+{
+    padding-left:5px;
+}
+.contact-info-carousel .item .contact-info li .text-box p span {
+    font-family: IRANSans;
+}
+.contact-info-carousel .item .contact-info li .text-box p {
+    text-align: right;
+    direction: rtl;
+}
+.text-right{
+    text-align:right;
+    direction:rtl;
+}
+.contact-info-carousel.owl-theme .owl-dots
+{
+    right:unset;
+    left:20px;
+}
+.contact-form {
+    font-family: IRANSans;
+}
+.font-IRANSans {
+    font-family: IRANSans !important;
+}
+.services-area .sec-title{
+    padding-right:24px;
+}
+.welcome-industry-area .sec-title {
+    padding-right: 24px;
+}
+.text-justify
+{
+    text-align:justify;
+    direction:rtl;
+}
+.dir-rtl{
+    direction:rtl;
+}
+.special-service-area .single-item a {
+    font-family: IRANSans !important;
+}
+.news-padding
+{
+    padding-bottom:0;
+}
+#comment-reject, #comment-succes
+{
+    display:none;
+    text-align:right;
+    direction:rtl;
+}
+.reply-box .reply-form input[type="text"], .reply-box .reply-form textarea {
+    border: 1px solid #eaeaea;
+    height: 50px;
+    margin-bottom: 30px;
+    padding: 0 15px;
+    width: 100%;
+    transition: all 500ms ease;
+    text-align: right;
+    direction: rtl;
+}
+.reply-box .reply-form button {
+    margin-top: 2px;
+    padding: 13px 30px;
+}
+.comment-box .single-comment-box .img-holder
+{
+    right:0;
+    left:unset;
+}
+.comment-box .single-comment-box .text-holder
+{
+    padding-right:20px;
+    text-align:right;
+    direction:rtl;
+    min-height:100px;
+}
+.comment-box .single-comment-box
+{
+    padding-right:100px;
+    padding-left:unset;
+} 
+.comment-title {
+    font-weight: 800;
+    color: #000;
+}

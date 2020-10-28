@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "ورود";
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+ <!-- Preloader -->
+<div class="preloader"></div>
+<!-- Preloader -->
+
+
+<div class="header-top"></div>
+<!--Page Title-->
+<section class="breadcrumb-area" style="background-image: url(/img/breadcrumb/breadcrumb-bg.jpg);">
+    <div class="container text-center">
+        <h1>Login</h1>
+    </div>
+</section>
+<!--End breadcrumb area-->
+<!--Start breadcrumb bottom area-->
+<section class="breadcrumb-bottom-area">
+    <div class="container">
+        <div class="left pull-left">
+            <a href="/account/login">Login</a>
+        </div>
+        <div class="right pull-right">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                <li>Login</li>
+            </ul>
+        </div>
+    </div>
+</section>
+@*<div class="page-head white-content">
+    <div class="height50vh parallax-container" style="background-image: url(/Images/img/Slider/Kusadasi-02.jpg);">
+        <div class="page-head-wrap">
+            <div class="display-r">
+                <div class="display-a">
+                    <div class="container">
+                        <div class="row justify-content-center animate" data-animation="fadeInUp" data-timeout="500">
+                            <div class="col-md-12">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/">صفحه اصلی</a></li>
+                                        <li class="breadcrumb-item"><a href="#">لاگین</a></li>
+                                    </ol>
+                                </nav>
+                                <h1 class="big-title mt-60">لاگین</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@
+<div class="row">
+    <div class="container">
+        <div class="col-md-4 col-md-push-4">
+            <div class="login-form">
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+</div>
+
+

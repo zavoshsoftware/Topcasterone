@@ -1,0 +1,81 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <title>Topcaster one</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="~/Content/_FrontEndLayout/style.css" rel="stylesheet" />
+    <link href="~/Content/_FrontEndLayout/responsive.css" rel="stylesheet" />
+    <link href="~/Content/_FrontEndLayout/style-rtl.css" rel="stylesheet" />
+</head>
+<body>
+    @Html.Partial("FrontEnd/_MenuPartial")
+    @RenderBody()
+    @Html.Partial("FrontEnd/_FooterPartial")
+    <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+    
+    
+    <!-- main jQuery -->
+    <script src="/Scripts/_FrontEndLayout/jquery-1.11.1.min.js"></script>
+    <!-- bootstrap -->
+    <script src="/Scripts/_FrontEndLayout/bootstrap.min.js"></script>
+    <!-- bx slider -->
+    <script src="/Scripts/_FrontEndLayout/jquery.bxslider.min.js"></script>
+    <!-- count to -->
+    <script src="/Scripts/_FrontEndLayout/jquery.countTo.js"></script>
+    <!-- owl carousel -->
+    <script src="/Scripts/_FrontEndLayout/owl.carousel.min.js"></script>
+    <!-- validate -->
+    <script src="/Scripts/_FrontEndLayout/validate.js"></script>
+    <!-- mixit up -->
+    <script src="/Scripts/_FrontEndLayout/jquery.mixitup.min.js"></script>
+    <!-- easing -->
+    <script src="/Scripts/_FrontEndLayout/jquery.easing.min.js"></script>
+    <!-- gmap helper -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHzPSV2jshbjI8fqnC_C4L08ffnj5EN3A"></script>
+    <!--gmap script-->
+    <script src="/Scripts/_FrontEndLayout/gmaps.js"></script>
+    <script src="/Scripts/_FrontEndLayout/map-helper.js"></script>
+    <!-- video responsive script -->
+    <script src="/Scripts/_FrontEndLayout/jquery.fitvids.js"></script>
+    <!-- jQuery ui js -->
+    <script src="/assets/jquery-ui-1.11.4/jquery-ui.js"></script>
+    <!-- fancy box -->
+    <script src="/assets/fancyapps-fancyBox/source/jquery.fancybox.pack.js"></script>
+    <script src="/Scripts/_FrontEndLayout/jquery.appear.js"></script>
+	
+	
+  
+
+	<script src="~/Scripts/_FrontEndLayout/jquery.flexslider.js"></script>
+	<script src="~/Scripts/_FrontEndLayout/imagezoom.js"></script>
+<!-- revolution slider js -->
+    <script src="/assets/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script src="/assets/revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="/assets/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script src="/assets/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+    <script src="/assets/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script src="/assets/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="/assets/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+    <script src="/assets/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script src="/assets/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script src="/assets/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="/assets/revolution/js/extensions/revolution.extension.video.min.js"></script>
+
+
+
+    <!-- thm custom script -->
+    <script src="/Scripts/_FrontEndLayout/custom.js"></script>
+    <script src="~/Scripts/custom.js"></script>
+
+@RenderSection("scripts", required: false)
+
+</body>
+</html>

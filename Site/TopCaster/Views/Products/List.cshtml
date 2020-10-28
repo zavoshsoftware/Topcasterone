@@ -1,0 +1,71 @@
+﻿@model ViewModels.ProductListViewModel
+@{
+    ViewBag.Title = Model.ProductGroup.PageTitle;
+    Layout = "~/Views/Shared/FrontEnd/_FronEndLayout.cshtml";
+}
+
+<section class="breadcrumb-area" style="background-image: url(/img/breadcrumb/breadcrumb-bg.jpg);">
+	<div class="container text-center">
+		<h1>@Model.ProductGroup.Title</h1>
+	</div>
+</section>
+
+<section class="breadcrumb-bottom-area">
+	<div class="container">
+		<div class="left pull-left">
+			<a href="#">محصولات</a>
+		</div>
+		<div class="right pull-right">
+			<ul>
+				<li><a href="/">صفحه اصلی</a></li>
+				<li><i class="fa fa-angle-left" aria-hidden="true"></i></li>
+				<li>@Model.ProductGroup.Title</li>
+			</ul>
+		</div>
+	</div>
+</section>
+
+
+<section class="shop-area">
+	<div class="container">
+		
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+	
+					<div class="product-content-box">
+						<div class="row">
+							<div class="col-md-12 img-box">
+								<div class="flexslider">
+									<ul class="slides">
+										@foreach (var product in Model.Products)
+										{
+											<li data-thumb="@product.ImageUrl">
+												<div class="thumb-image">
+													<img src="@product.ImageUrl" alt="" data-imagezoom="true" class="img-responsive">
+												</div>
+											</li>
+										}
+								
+									</ul>
+								</div>
+							</div>
+					 
+						</div>
+					</div>
+ 
+
+			</div>
+
+	
+			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+				<div class="text-right">@Html.Raw(Model.ProductGroup.Body)</div>
+
+		</div>
+		</div>
+		
+		 
+	</div>
+</section>     
+
+
+    
